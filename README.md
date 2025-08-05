@@ -1,0 +1,1 @@
+Đây là một dự án xây dựng API đơn giản sử dụng FastAPI giúp người dùng tương tác với hệ thống quản lý sinh viên. API hỗ trợ các chức năng như tạo mới, cập nhật, tìm kiếm và xóa thông tin sinh viên. Dữ liệu được lưu trữ tạm thời bằng Dictionary để dễ triển khai thử nghiệm.
