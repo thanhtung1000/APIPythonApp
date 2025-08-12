@@ -1,11 +1,26 @@
-Bài làm này tập trung vào việc xây dựng một hệ thống API quản lý sinh viên đơn giản, sử dụng công nghệ FastAPI – một framework hiện đại và hiệu quả dành cho việc phát triển các ứng dụng web và dịch vụ RESTful. Mục tiêu chính của dự án là giúp người học nắm vững cách thiết kế, triển khai và thử nghiệm một API có khả năng xử lý các thao tác cơ bản như thêm mới, cập nhật, tìm kiếm và xóa thông tin sinh viên.
-Trong giai đoạn đầu, hệ thống được triển khai và chạy trên môi trường cục bộ (localhost), giúp việc phát triển và kiểm thử diễn ra thuận tiện mà không cần đến hạ tầng Cloud. Người dùng có thể tương tác với API thông qua các công cụ như Postman hoặc trực tiếp từ trình duyệt thông qua giao diện Swagger UI do FastAPI tự động tạo ra.
+Bài làm này tập trung vào việc xây dựng một hệ thống API quản lý sinh viên sử dụng công nghệ FastAPI. Mục tiêu của dự án là tạo ra một API đơn giản, dễ triển khai, cho phép người dùng thực hiện các thao tác cơ bản như thêm mới, cập nhật, tìm kiếm và xóa thông tin sinh viên.
+Trong giai đoạn đầu, hệ thống được chạy trên môi trường cục bộ (localhost), giúp người học dễ dàng kiểm thử và hiểu rõ cách hoạt động của từng endpoint. Sau khi hoàn thiện, API có thể được triển khai lên Cloud để phục vụ các ứng dụng client từ xa.
 
-Công nghệ và ngôn ngữ sử dụng:
-Dự án được xây dựng hoàn toàn bằng ngôn ngữ Python 3.x, kết hợp với các công nghệ sau:
-FastAPI: Framework chính để xây dựng API, hỗ trợ tự động sinh tài liệu và giao diện thử nghiệm thông qua Swagger UI.
+Dự án được xây dựng bằng ngôn ngữ Python 3.x, sử dụng các công nghệ và thư viện sau:
+
+FastAPI: Framework chính để xây dựng RESTful API, hỗ trợ tự động sinh tài liệu và giao diện thử nghiệm.
+
 Uvicorn: Server ASGI dùng để chạy ứng dụng FastAPI.
-Pydantic: Thư viện hỗ trợ kiểm tra và xác thực dữ liệu đầu vào.
+
+Pydantic: Dùng để kiểm tra và xác thực dữ liệu đầu vào.
+
 Dictionary (Python): Dữ liệu sinh viên được lưu tạm thời trong bộ nhớ dưới dạng Dictionary, giúp đơn giản hóa quá trình thử nghiệm.
+
 JSON: Định dạng dữ liệu được sử dụng để trao đổi giữa client và server.
-Trong giai đoạn nâng cao, hệ thống có thể được triển khai lên các nền tảng Cloud như Pinggy, Render hoặc Railway, giúp các ứng dụng client có thể truy cập API từ xa mà không cần dùng chung mạng nội bộ.
+
+Pinggy / Render / Railway (ở giai đoạn nâng cao): Các nền tảng hỗ trợ triển khai API lên Cloud để truy cập từ xa.
+
+Về thuật toán, hệ thống không sử dụng các thuật toán phức tạp mà chủ yếu xử lý theo logic CRUD cơ bản, đảm bảo tính rõ ràng và dễ hiểu cho người học.
+
+Hệ thống gồm hai giao diện chính:
+
+Giao diện nhập liệu sinh viên: Cho phép người dùng nhập thông tin sinh viên như mã số, họ tên, ngày sinh, lớp, email,... và thực hiện các thao tác như thêm mới, chỉnh sửa hoặc xóa. Giao diện được thiết kế đơn giản, dễ sử dụng, phù hợp với mục tiêu thử nghiệm ban đầu.
+
+Giao diện tra cứu sinh viên: Người dùng có thể nhập mã sinh viên để tìm kiếm thông tin tương ứng. Nếu sinh viên tồn tại trong hệ thống, các thông tin sẽ được hiển thị đầy đủ. Nếu không, hệ thống sẽ thông báo không tìm thấy.
+
+Ngoài ra, Swagger UI do FastAPI cung cấp cũng đóng vai trò như một giao diện thử nghiệm, cho phép người dùng gửi các yêu cầu HTTP như POST, GET, PUT, DELETE và xem phản hồi trực tiếp từ API.
